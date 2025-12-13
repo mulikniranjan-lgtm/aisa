@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AISA Admin Login</title>
+  <style>
+    body {
+      background: #0b132b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+    .card {
+      padding: 20px;
+      background: #1c2541;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    input {
+      width: 100%; margin: 8px 0; padding: 10px;
+      border-radius: 6px; border: none;
+    }
+    button {
+      width: 100%; padding: 12px;
+      background: #00d1ff; border: none;
+      border-radius: 6px; font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>AISA Admin Login</h2>
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="loginAdmin()">Login</button>
+    <p id="msg" style="color: #ff8080; margin-top: 8px;"></p>
+  </div>
+
+  <!-- Firebase Compat Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Your Firebase Config (paste your real one)
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD-ALRboRc9XI9E9F-w8-SPPIhKEc9pPUU",
+  authDomain: "aisa-2954a.firebaseapp.com",
+  projectId: "aisa-2954a",
+  storageBucket: "aisa-2954a.firebasestorage.app",
+  messagingSenderId: "1043706690950",
+  appId: "1:1043706690950:web:07117293edbcae4a204007",
+  measurementId: "G-9YRHGDDCHC"
+};
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function loginAdmin() {
+      document.getElementById("msg").innerText = "Logging in...";
+
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, pass)
+        .then(() => {
+          window.location.href = "admin-panel.html";
+        })
+        .catch(err => {
+          document.getElementById("msg").innerText = err.message;
+        });
+    }
+  </script>
+
+</body>
+</html>

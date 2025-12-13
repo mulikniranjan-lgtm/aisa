@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Academics & Resources | DACOE AI & DS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script src="bot.js"></script>
+
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <img src="aisa-logo.jpeg" alt="AISA Logo" class="logo-img" />
+          <div class="logo-text">
+            <span>dacoe • Karad</span>
+            <span>AI & DS • Academics</span>
+          </div>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="index.html#curriculum">Curriculum</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="#" class="active">Academics</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn-menu" id="btnMenu">☰</button>
+        </div>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="index.html#curriculum">Curriculum</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="academics.html">Academics</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Academics & resources</div>
+            <h1 class="section-title">Syllabus, time-table & result links.</h1>
+            <p class="section-sub">
+              This page collects all important academic documents of the AI & DS department.
+              Replace the dummy filenames/links with your official PDFs or university URLs.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <p><strong>Syllabus (sample)</strong></p>
+            <ul class="list">
+              <li>SY AI & DS – CBCS Syllabus
+  <a class="btn-chip btn-small" href="sy-syllabus.pdf.pdf" target="_blank">
+    View / Download
+  </a>
+</li>
+
+              <li>TE AI & DS – CBCS Syllabus
+                <button class="btn-chip btn-small btn-open-resource" data-name="TE Syllabus">
+                  View / Download
+                </button>
+              </li>
+              <li>BE AI & DS – CBCS Syllabus
+                <button class="btn-chip btn-small btn-open-resource" data-name="BE Syllabus">
+                  View / Download
+                </button>
+              </li>
+            </ul>
+            <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.4rem;">
+              Suggestion: Upload your syllabus PDFs (e.g. <code>syllabus-se.pdf</code>) and link them here.
+            </p>
+          </div>
+
+          <div class="card">
+            <p><strong>Department time-table</strong></p>
+            <ul class="list">
+              <li>Current semester overall time-table
+                <button class="btn-chip btn-small btn-open-resource" data-name="Overall Time-table">
+                  View
+                </button>
+              </li>
+              <li>SE AI & DS – Class time-table
+                <button class="btn-chip btn-small btn-open-resource" data-name="SE Time-table">
+                  View
+                </button>
+              </li>
+              <li>TE AI & DS – Class time-table
+                <button class="btn-chip btn-small btn-open-resource" data-name="TE Time-table">
+                  View
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <p><strong>Result & exam links</strong></p>
+            <ul class="list">
+              <li>University result portal
+                <button class="btn-chip btn-small btn-open-resource" data-name="Result Portal">
+                  Open link
+                </button>
+              </li>
+              <li>Internal assessment marks
+                <button class="btn-chip btn-small btn-open-resource" data-name="Internal Marks">
+                  View
+                </button>
+              </li>
+              <li>Exam timetable / notices
+                <button class="btn-chip btn-small btn-open-resource" data-name="Exam Notices">
+                  View
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" style="padding-top:2rem;">
+          <div class="section-header">
+            <div class="section-title-group">
+              <div class="section-tag">Useful links</div>
+              <h2 class="section-title">Student resources & portals.</h2>
+              <p class="section-sub">
+                You can keep all important links here – LMS, coding platforms, cloud credits, etc.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <ul class="list">
+                <li>College LMS / ERP portal
+                  <button class="btn-chip btn-small btn-open-resource" data-name="LMS Portal">
+                    Open
+                  </button>
+                </li>
+                <li>AI & DS GitHub organisation
+                  <button class="btn-chip btn-small btn-open-resource" data-name="GitHub Org">
+                    Open
+                  </button>
+                </li>
+                <li>Google Drive – shared notes
+                  <button class="btn-chip btn-small btn-open-resource" data-name="Notes Drive">
+                    Open
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <p><strong>How to customise</strong></p>
+              <ul class="list">
+                <li>Replace the dummy names with exact document titles.</li>
+                <li>Instead of modal, you can convert each button into a direct <code>&lt;a href="file.pdf"&gt;</code>.</li>
+                <li>If your college has a result/ERP portal, paste its URL in the script.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Dept. of AI & DS, DACOE Karad.</span>
+      <div class="footer-links">
+        <a href="index.html">Back to main site</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Resource modal -->
+  <div class="overlay" id="resourceModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="resourceTitle">Resource</div>
+        <button class="modal-close" data-close-modal>×</button>
+      </div>
+      <p id="resourceBody">
+        This is a demo popup. In production, you can replace this with a direct link to a PDF or
+        university portal.
+      </p>
+      <div class="modal-footer">
+        <button class="btn-outline btn-small" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-top" id="btnTop">↑ Top</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const btnMenu = document.getElementById('btnMenu');
+      const mobileNav = document.getElementById('mobileNav');
+      const btnTop = document.getElementById('btnTop');
+
+      btnMenu.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) btnTop.classList.add('show');
+        else btnTop.classList.remove('show');
+      });
+
+      btnTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const resourceModal = document.getElementById('resourceModal');
+      const resourceTitle = document.getElementById('resourceTitle');
+      const resourceBody = document.getElementById('resourceBody');
+
+      document.querySelectorAll('.btn-open-resource').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.getAttribute('data-name');
+          resourceTitle.textContent = name;
+          resourceBody.textContent =
+            'Here you can link the official PDF/URL for "' + name +
+            '". For now this is a demo popup so every button works 100%.';
+          resourceModal.classList.add('active');
+        });
+      });
+
+      document.querySelectorAll('[data-close-modal]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.closest('.overlay').classList.remove('active');
+        });
+      });
+      document.querySelectorAll('.overlay').forEach(ov => {
+        ov.addEventListener('click', e => {
+          if (e.target === ov) ov.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<!-- Admin Overlay Root (inactive for now) -->
+<div id="adminOverlayRoot"></div>
+<!-- Hidden Admin Trigger (inactive) -->
+<div id="adminTrigger" style="
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: none;
+  z-index: 99999;
+"></div>
+<script>
+  // Admin shortcut placeholder (inactive for now)
+  document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+      console.log("Admin shortcut detected (CMS not enabled yet)");
+    }
+  });
+</script>
+
+</body>
+</html>

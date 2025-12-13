@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AISA | DACOE AI & DS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <img src="aisa-logo.jpeg" alt="AISA Logo" class="logo-img" />
+          <div class="logo-text">
+            <span>dacoe • Karad</span>
+            <span>AISA – Student Association</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="academics.html">Academics</a>
+          <a href="#" class="active">AISA</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn-menu">☰</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">AISA</div>
+            <h1 class="section-title">Artificial Intelligence Students Association</h1>
+            <p class="section-sub">
+              A student-driven body promoting technical learning, innovation, events, and community activities related to AI & Data Science.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div class="section-title-group">
+            <h2 class="section-title">Office Bearers</h2>
+            <p class="section-sub">Meet the core team members leading the association.</p>
+          </div>
+        </div>
+
+        <div class="faculty-grid">
+          <div class="faculty-card">
+            <span class="faculty-role">President</span>
+            <div class="faculty-name">Name Here</div>
+            <div class="faculty-meta">Leads planning, events & collaborations</div>
+          </div>
+          <div class="faculty-card">
+            <span class="faculty-role">Vice President</span>
+            <div class="faculty-name">Name Here</div>
+            <div class="faculty-meta">Supports leadership & execution</div>
+          </div>
+          <div class="faculty-card">
+            <span class="faculty-role">Secretary</span>
+            <div class="faculty-name">Name Here</div>
+            <div class="faculty-meta">Documentation, planning & communication</div>
+          </div>
+          <div class="faculty-card">
+            <span class="faculty-role">Treasurer</span>
+            <div class="faculty-name">Name Here</div>
+            <div class="faculty-meta">Manages funds & resources</div>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:2rem;">
+          <div class="section-title-group">
+            <h2 class="section-title">AISA Photo Gallery</h2>
+            <p class="section-sub">Photos from events, workshops and activities.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-caption="AISA Orientation">
+            AISA Orientation
+            <span>New members welcome event</span>
+          </div>
+          <div class="gallery-item" data-caption="Workshop">
+            Workshop
+            <span>Hands-on machine learning</span>
+          </div>
+          <div class="gallery-item" data-caption="Hackathon Team">
+            Hackathon Team
+            <span>24hr coding challenge</span>
+          </div>
+          <div class="gallery-item" data-caption="Guest Lecture">
+            Guest Lecture
+            <span>Industry experts sharing insights</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> AISA • DACOE Karad.</span>
+      <div class="footer-links">
+        <a href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <!-- Admin Overlay Root (inactive for now) -->
+<div id="adminOverlayRoot"></div>
+<!-- Hidden Admin Trigger (inactive) -->
+<div id="adminTrigger" style="
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: none;
+  z-index: 99999;
+"></div>
+<script>
+  // Admin shortcut placeholder (inactive for now)
+  document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+      console.log("Admin shortcut detected (CMS not enabled yet)");
+    }
+  });
+</script>
+
+</body>
+</html>

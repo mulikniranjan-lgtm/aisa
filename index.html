@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DACOE | Department of AI & Data Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <script src="bot.js"></script>
+
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <img src="aisa-logo.jpeg" alt="AISA Logo" class="logo-img" />
+          <div class="logo-text">
+            <span>dacoe • Karad</span>
+            <span>Dept. of AI & Data Science</span>
+          </div>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#faculty">Faculty</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#events">Events</a>
+          <a href="#students">Students</a>
+          <a href="#gallery">Gallery</a>
+          <a href="academics.html">Academics</a>
+          <a href="aisa.html">AISA</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn-outline btn-small" id="btnApplyNow">Apply Now</button>
+          <button class="btn-menu" id="btnMenu">☰</button>
+        </div>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#events">Events</a>
+        <a href="#students">Students</a>
+        <a href="#gallery">Gallery</a>
+        <a href="academics.html">Academics</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="section" id="home">
+      <div class="container hero">
+        <div>
+          <div class="eyebrow">Welcome to DACOE • AI & DS</div>
+          <h1 class="hero-title">
+            Building the next generation of
+            <span class="gradient-text">AI engineers & innovators.</span>
+          </h1>
+          <p class="hero-sub">
+            The Department of Artificial Intelligence & Data Science at DACOE Karad focuses on
+            industry-ready skills in Machine Learning, Data Analytics, and Cloud-native development,
+            with a strong foundation in core Computer Science.
+          </p>
+          <div class="hero-meta">
+            <span>NBA-aligned curriculum</span>
+            <span>Industry mentors & MoUs</span>
+            <span>AISA – Artifical Intelligence Students Association</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn" id="btnExploreCurriculum">Explore Curriculum →</button>
+            <a href="academics.html" class="btn-outline">Syllabus & Time-table</a>
+          </div>
+          <p class="hero-note">
+            This site can be uploaded directly to your college server as the official AI & DS department page.
+          </p>
+        </div>
+        <aside class="hero-panel">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Department dashboard • Live</span>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-number">60</div>
+              <div class="stat-label">Intake per year</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Core faculty</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">18+</div>
+              <div class="stat-label">Ongoing projects</div>
+            </div>
+          </div>
+          <p style="font-size:0.82rem; margin-top:0.5rem; color:var(--text-muted);">
+            Highlights: AI bootcamps, industry talks, research projects in healthcare, agriculture,
+            and smart campus solutions.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">About</div>
+            <h2 class="section-title">Vision, mission & focus areas.</h2>
+            <p class="section-sub">
+              The department aims to create AI professionals who can design responsible solutions,
+              solve real-world problems, and build scalable intelligent systems.
+            </p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <p><strong>Vision</strong></p>
+            <ul class="list">
+              <li>To become a centre of excellence in Artificial Intelligence & Data Science education.</li>
+              <li>To produce globally competent and socially responsible AI engineers.</li>
+            </ul>
+            <p style="margin-top:0.6rem;"><strong>Mission</strong></p>
+            <ul class="list">
+              <li>Impart strong foundations in mathematics, programming and AI techniques.</li>
+              <li>Promote project-based learning, innovation and entrepreneurship.</li>
+              <li>Encourage industry collaboration for internships and live projects.</li>
+              <li>Ensure ethical and responsible use of AI technologies.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p><strong>Program Outcomes</strong></p>
+            <ul class="list">
+              <li>Apply AI & DS concepts to build intelligent applications.</li>
+              <li>Design and analyse algorithms and data pipelines.</li>
+              <li>Work effectively in multidisciplinary teams.</li>
+              <li>Communicate technical ideas clearly and professionally.</li>
+              <li>Adapt to new tools, frameworks and technologies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty -->
+    <section class="section" id="faculty">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Faculty</div>
+            <h2 class="section-title">Experienced and supportive teaching staff.</h2>
+            <p class="section-sub">
+              Qualified faculty members with expertise in Machine Learning, Deep Learning,
+              Data Science and core Computer Science subjects.
+            </p>
+          </div>
+        </div>
+        <div class="faculty-grid">
+          <article class="faculty-card">
+            <span class="faculty-role">HoD</span>
+            <div class="faculty-name">Dr. Example Name</div>
+            <div class="faculty-meta">Ph.D. in Computer Engineering • 15+ years experience</div>
+            <div class="faculty-tags">
+              <span>Machine Learning</span>
+              <span>Research Guidance</span>
+            </div>
+            <div class="faculty-actions">
+              <button class="btn-link" data-faculty="Dr. Example Name">View profile</button>
+              <span>hod.ai.ds@dacoe.ac.in</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <span class="faculty-role">Assistant Professor</span>
+            <div class="faculty-name">Prof. Sample Faculty 1</div>
+            <div class="faculty-meta">M.Tech in AI • 6+ years teaching</div>
+            <div class="faculty-tags">
+              <span>Deep Learning</span>
+              <span>Computer Vision</span>
+            </div>
+            <div class="faculty-actions">
+              <button class="btn-link" data-faculty="Prof. Sample Faculty 1">View profile</button>
+              <span>sample1.ai@dacoe.ac.in</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <span class="faculty-role">Assistant Professor</span>
+            <div class="faculty-name">Prof. Sample Faculty 2</div>
+            <div class="faculty-meta">M.E. in Computer Science • 5+ years</div>
+            <div class="faculty-tags">
+              <span>Data Analytics</span>
+              <span>Cloud Computing</span>
+            </div>
+            <div class="faculty-actions">
+              <button class="btn-link" data-faculty="Prof. Sample Faculty 2">View profile</button>
+              <span>sample2.ai@dacoe.ac.in</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="section" id="curriculum">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Curriculum & labs</div>
+            <h2 class="section-title">Balanced combination of CS fundamentals and modern AI stack.</h2>
+            <p class="section-sub">
+              Detailed semester-wise syllabus, time-table and result links are available on the Academics page.
+            </p>
+          </div>
+          <a href="academics.html" class="btn-chip">Open Academics page →</a>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <p><strong>Core CS subjects</strong></p>
+            <ul class="list">
+              <li>Problem Solving & Programming (C / Python)</li>
+              <li>Data Structures & Algorithms</li>
+              <li>Database Management Systems</li>
+              <li>Object Oriented Programming</li>
+              <li>Operating Systems & Computer Networks</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p><strong>AI & DS specialisation</strong></p>
+            <ul class="list">
+              <li>Machine Learning & Deep Learning</li>
+              <li>Natural Language Processing</li>
+              <li>Big Data Analytics</li>
+              <li>Cloud Computing & MLOps</li>
+              <li>Data Visualization & Business Intelligence</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p><strong>Laboratories</strong></p>
+            <ul class="list">
+              <li>AI & ML Lab with GPU-enabled systems</li>
+              <li>Data Science Lab (Python / R)</li>
+              <li>Project & Innovation Lab</li>
+              <li>Common Computing Lab with high-speed internet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Events & activities</div>
+            <h2 class="section-title">Hackathons, workshops & expert talks.</h2>
+            <p class="section-sub">
+              AISA and the department regularly conduct events to keep students updated with industry trends.
+            </p>
+          </div>
+        </div>
+        <div class="events-grid">
+          <div>
+            <article class="event-card" data-event="AI Bootcamp">
+              <div class="event-header">
+                <span class="event-title">AI Bootcamp: From Zero to Deployment</span>
+                <span class="chip">Internal</span>
+              </div>
+              <div class="event-meta">3-day hands-on bootcamp for SE & TE students.</div>
+              <p style="margin-top:0.3rem;">
+                Covers Python, ML basics, model building and deployment on cloud.
+              </p>
+              <div style="margin-top:0.5rem;">
+                <button class="btn-chip btn-view-event">View details</button>
+                <button class="btn-chip btn-register-event">Register interest</button>
+              </div>
+            </article>
+
+            <article class="event-card" data-event="Data Science for Agriculture">
+              <div class="event-header">
+                <span class="event-title">Data Science for Agriculture – Seminar</span>
+                <span class="chip">Guest</span>
+              </div>
+              <div class="event-meta">Jointly organized with local industry partner.</div>
+              <p style="margin-top:0.3rem;">
+                Discusses AI in precision farming, crop prediction and agri-supply chain.
+              </p>
+              <div style="margin-top:0.5rem;">
+                <button class="btn-chip btn-view-event">View details</button>
+                <button class="btn-chip btn-register-event">Register interest</button>
+              </div>
+            </article>
+          </div>
+          <div class="card">
+            <p><strong>Student research snapshot</strong></p>
+            <ul class="list">
+              <li>Fake news detection using NLP.</li>
+              <li>Smart campus parking using computer vision.</li>
+              <li>Crop disease classification using deep learning.</li>
+              <li>Chatbot for college enquiry and FAQs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Students & Gallery -->
+    <section class="section" id="students">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Student life</div>
+            <h2 class="section-title">AISA club, coding contests & more.</h2>
+            <p class="section-sub">
+              Students are encouraged to participate in technical events, hackathons and community activities.
+            </p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <p><strong>Clubs & chapters</strong></p>
+            <div class="chip-row">
+              <span class="chip">AISA – AI Students Association</span>
+              <span class="chip">Coding Club</span>
+              <span class="chip">Cloud Club</span>
+              <span class="chip">Innovation & Startup Cell</span>
+            </div>
+            <p style="margin-top:0.6rem;"><strong>Achievements (sample)</strong></p>
+            <ul class="list">
+              <li>Top ranks in inter-college coding competitions.</li>
+              <li>Smart India Hackathon participation.</li>
+              <li>Internships in software companies and startups.</li>
+            </ul>
+          </div>
+          <div class="card" id="gallery">
+            <p><strong>Gallery</strong></p>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">
+              Click a tile to open preview. Replace these placeholders with real event photos.
+            </p>
+            <div class="gallery-grid">
+              <div class="gallery-item" data-caption="Coding Contest">
+                Coding Contest
+                <span>Intra-department coding competition</span>
+              </div>
+              <div class="gallery-item" data-caption="Project Expo">
+                Project Expo
+                <span>Final-year project demonstrations</span>
+              </div>
+              <div class="gallery-item" data-caption="Expert Talk">
+                Expert Talk
+                <span>Industry guest lecture</span>
+              </div>
+              <div class="gallery-item" data-caption="Hackathon">
+                Hackathon
+                <span>AISA 24-hour hackathon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-tag">Contact</div>
+            <h2 class="section-title">Get in touch with the department.</h2>
+            <p class="section-sub">
+              Use the form below for admissions, projects, internships or collaboration queries.
+            </p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <div class="card">
+            <form id="contactForm" class="form-grid">
+              <div class="field-group">
+                <label for="name" class="field-label">Full Name*</label>
+                <input id="name" class="field-input" type="text" required />
+              </div>
+              <div class="field-group">
+                <label for="email" class="field-label">Email*</label>
+                <input id="email" class="field-input" type="email" required />
+              </div>
+              <div class="field-group">
+                <label for="category" class="field-label">Category*</label>
+                <select id="category" class="field-select" required>
+                  <option value="">Select an option</option>
+                  <option value="admission">Admission enquiry</option>
+                  <option value="project">Project / internship</option>
+                  <option value="collaboration">Industry collaboration</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="message" class="field-label">Message*</label>
+                <textarea id="message" class="field-textarea" required></textarea>
+              </div>
+              <div class="field-group">
+                <button type="submit" class="btn">Submit query</button>
+                <p class="form-note">
+                  Demo only – this shows a success message in browser. Connect to backend/email later.
+                </p>
+                <div id="formStatus" class="form-status"></div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <p><strong>Department office</strong></p>
+            <ul class="list">
+              <li><strong>Address:</strong> Dept. of AI & DS, DACOE,Karad, Maharashtra.</li>
+              <li><strong>Office hours:</strong> Mon–Sat • 10:00 AM – 5:00 PM</li>
+              <li><strong>Email:</strong> ai.ds@dacoe.ac.in (sample)</li>
+              <li><strong>Phone:</strong> +91-00000 00000 (update later)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Dept. of AI & DS, DACOE Karad.</span>
+      <div class="footer-links">
+        <span>Designed & developed by S.Y.</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="overlay" id="facultyModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="facultyModalTitle">Faculty profile</div>
+        <button class="modal-close" data-close-modal>×</button>
+      </div>
+      <p id="facultyModalBody">
+        This is a placeholder profile. Replace this text with education, experience, publications and areas of interest.
+      </p>
+      <div class="modal-footer">
+        <button class="btn-outline btn-small" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="eventModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="eventModalTitle">Event details</div>
+        <button class="modal-close" data-close-modal>×</button>
+      </div>
+      <p id="eventModalBody">
+        This modal shows extra information about the selected event. Add agenda, speakers and schedule here.
+      </p>
+      <div class="modal-footer">
+        <button class="btn-outline btn-small" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="galleryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="galleryModalTitle">Gallery preview</div>
+        <button class="modal-close" data-close-modal>×</button>
+      </div>
+      <p id="galleryModalBody">
+        Replace the placeholders with real department photos for a stronger visual impression.
+      </p>
+      <div class="modal-footer">
+        <button class="btn-outline btn-small" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-top" id="btnTop">↑ Top</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const yearSpan = document.getElementById('year');
+      yearSpan.textContent = new Date().getFullYear();
+
+      const btnMenu = document.getElementById('btnMenu');
+      const mobileNav = document.getElementById('mobileNav');
+      const btnTop = document.getElementById('btnTop');
+
+      btnMenu.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 260) btnTop.classList.add('show');
+        else btnTop.classList.remove('show');
+      });
+
+      btnTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Smooth nav highlight
+      const navLinks = document.querySelectorAll('#navLinks a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+
+      // Scroll helper buttons
+      document.getElementById('btnExploreCurriculum').addEventListener('click', () => {
+        document.getElementById('curriculum').scrollIntoView({ behavior: 'smooth' });
+      });
+      document.getElementById('btnApplyNow').addEventListener('click', () => {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Faculty modal
+      const facultyModal = document.getElementById('facultyModal');
+      const facultyModalTitle = document.getElementById('facultyModalTitle');
+      const facultyModalBody = document.getElementById('facultyModalBody');
+
+      document.querySelectorAll('.btn-link[data-faculty]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.getAttribute('data-faculty');
+          facultyModalTitle.textContent = name + ' – Profile';
+          facultyModalBody.textContent =
+            'This is a placeholder profile for ' + name +
+            '. Add qualifications, experience and research interests here.';
+          facultyModal.classList.add('active');
+        });
+      });
+
+      // Event modal
+      const eventModal = document.getElementById('eventModal');
+      const eventModalTitle = document.getElementById('eventModalTitle');
+      const eventModalBody = document.getElementById('eventModalBody');
+
+      document.querySelectorAll('.btn-view-event').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const card = btn.closest('.event-card');
+          const title = card.getAttribute('data-event');
+          eventModalTitle.textContent = title;
+          eventModalBody.textContent =
+            'Details for "' + title + '" will be shown here. Add agenda, speakers and timing.';
+          eventModal.classList.add('active');
+        });
+      });
+
+      document.querySelectorAll('.btn-register-event').forEach(btn => {
+        btn.addEventListener('click', () => {
+          alert('Thank you! In the live site this button can redirect to a Google Form / registration page.');
+        });
+      });
+
+      // Gallery modal
+      const galleryModal = document.getElementById('galleryModal');
+      const galleryModalTitle = document.getElementById('galleryModalTitle');
+
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const caption = item.getAttribute('data-caption') || 'Gallery image';
+          galleryModalTitle.textContent = caption;
+          galleryModal.classList.add('active');
+        });
+      });
+
+      // Close modals
+      document.querySelectorAll('[data-close-modal]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.closest('.overlay').classList.remove('active');
+        });
+      });
+      document.querySelectorAll('.overlay').forEach(ov => {
+        ov.addEventListener('click', e => {
+          if (e.target === ov) ov.classList.remove('active');
+        });
+      });
+
+      // Contact form
+      const contactForm = document.getElementById('contactForm');
+      const formStatus = document.getElementById('formStatus');
+
+      contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const category = document.getElementById('category').value;
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !category || !message) {
+          formStatus.textContent = 'Please fill all required fields.';
+          formStatus.className = 'form-status error';
+          return;
+        }
+
+        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailPattern.test(email)) {
+          formStatus.textContent = 'Please enter a valid email address.';
+          formStatus.className = 'form-status error';
+          return;
+        }
+
+        formStatus.textContent = 'Your query has been recorded locally (demo). Thank you!';
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      });
+    });
+  </script>
+  
+<!-- Firebase Core -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config from console:
+ // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD-ALRboRc9XI9E9F-w8-SPPIhKEc9pPUU",
+  authDomain: "aisa-2954a.firebaseapp.com",
+  projectId: "aisa-2954a",
+  storageBucket: "aisa-2954a.firebasestorage.app",
+  messagingSenderId: "1043706690950",
+  appId: "1:1043706690950:web:07117293edbcae4a204007",
+  measurementId: "G-9YRHGDDCHC"
+};
+
+ firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+
+
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<!-- Admin Overlay Root (inactive for now) -->
+<div id="adminOverlayRoot"></div>
+<!-- Hidden Admin Trigger (inactive) -->
+<div id="adminTrigger" style="
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: none;
+  z-index: 99999;
+"></div>
+<script>
+  // Show admin trigger ONLY when admin is logged in
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      const btn = document.getElementById("adminTrigger");
+      if (btn) btn.style.display = "block";
+    }
+  });
+
+  // Keyboard shortcut
+  document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+      const overlay = document.getElementById("adminOverlayRoot");
+      if (overlay) {
+        console.log("Admin shortcut pressed (overlay coming next)");
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

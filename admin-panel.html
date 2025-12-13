@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AISA Admin Panel</title>
+  <style>
+    body { background: #0b132b; color: white; font-family: Arial; padding: 20px; }
+    textarea { width: 100%; height: 300px; padding: 10px; border-radius: 8px; }
+    button { padding: 10px 20px; margin-top: 10px; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h2>AISA Admin Panel</h2>
+<p>Edit FAQ (live updates):</p>
+
+<textarea id="faqBox"></textarea>
+<br>
+<button onclick="saveFAQ()">Save FAQ</button>
+<button onclick="logout()">Logout</button>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyD-ALRboRc9XI9E9F-w8-SPPIhKEc9pPUU",
+  authDomain: "aisa-2954a.firebaseapp.com",
+  projectId: "aisa-2954a",
+  storageBucket: "aisa-2954a.firebasestorage.app",
+  messagingSenderId: "1043706690950",
+  appId: "1:1043706690950:web:07117293edbcae4a204007"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+ auth.onAuthStateChanged(user => {
+  if (!user) {
+    window.location.href = "admin-login.html";
+  } else {
+    loadFAQ();
+  }
+});
+
+
+async function loadFAQ() {
+  const snap = await db.collection("config").doc("faq").get();
+  if (snap.exists) {
+    document.getElementById("faqBox").value =
+      JSON.stringify(snap.data().list, null, 2);
+  }
+}
+
+function saveFAQ() {
+  let data;
+  try {
+    data = JSON.parse(document.getElementById("faqBox").value);
+  } catch {
+    alert("Invalid JSON format");
+    return;
+  }
+
+  db.collection("config").doc("faq").set({ list: data })
+    .then(() => alert("FAQ updated!"))
+    .catch(err => alert(err.message));
+}
+
+ function logout() {
+  auth.signOut().then(() => {
+    window.location.href = "admin-login.html";
+  });
+}
+
+</script>
+</body>
+</html>
