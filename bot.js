@@ -46,17 +46,30 @@
   const msgs = box.querySelector("#msgs");
   const input = box.querySelector("#input");
 
-  function add(text, user = false) {
-    const d = document.createElement("div");
-    d.style.margin = "6px 0";
-    d.style.padding = "6px";
-    d.style.borderRadius = "6px";
-    d.style.background = user ? "#1f2937" : "#22d3ee";
-    d.style.color = user ? "#fff" : "#000";
-    d.textContent = text;
-    msgs.appendChild(d);
-    msgs.scrollTop = msgs.scrollHeight;
+ function add(text, user = false) {
+  const d = document.createElement("div");
+
+  d.style.margin = "8px 0";
+  d.style.padding = "8px 10px";
+  d.style.borderRadius = "10px";
+  d.style.maxWidth = "85%";
+  d.style.wordBreak = "break-word";
+  d.style.fontSize = "0.95rem";
+
+  if (user) {
+    d.style.background = "#2563eb";   // blue
+    d.style.color = "#ffffff";        // WHITE text
+    d.style.marginLeft = "auto";
+  } else {
+    d.style.background = "#22d3ee";   // cyan
+    d.style.color = "#02121a";        // DARK readable text
   }
+
+  d.textContent = text;
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
 
   async function askAI(text) {
     add(text, true);
@@ -81,4 +94,5 @@
 
   setTimeout(() => add("Hi 👋 I’m AISA AI assistant."), 300);
 })();
+
 
