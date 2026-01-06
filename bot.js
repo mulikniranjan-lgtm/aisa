@@ -18,19 +18,25 @@
   document.body.appendChild(launcher);
 
   // ===== Chat Box =====
-  const box = document.createElement("div");
-  Object.assign(box.style, {
-    position: "fixed",
-    bottom: "90px",
-    right: "18px",
-    width: "360px",
-    background: "#0b1220",
-    color: "#ffffff",
-    borderRadius: "12px",
-    display: "none",
-    padding: "10px",
-    zIndex: 9999
-  });
+ Object.assign(box.style, {
+  position: "fixed",
+  bottom: "90px",
+  right: "18px",
+
+  width: "420px",        // ⬅ increased width
+  maxWidth: "95vw",      // responsive on small screens
+  height: "520px",       // ⬅ added height
+
+  background: "#0b1220",
+  color: "#ffffff",
+  borderRadius: "14px",
+  display: "none",
+  padding: "14px",
+
+  boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+  zIndex: 100000
+});
+
 
   box.innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:center">
@@ -155,3 +161,4 @@
     add("Hi 👋 I’m AISA AI assistant. How can I help you?", false);
   }, 300);
 })();
+
