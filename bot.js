@@ -62,7 +62,7 @@
     add(text, true);
 
     try {
-      const res = await fetch("http://localhost:3001/ask", {
+      const res = await fetch("https://aisa-4.onrender.com/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text })
@@ -81,3 +81,4 @@
 
   setTimeout(() => add("Hi 👋 I’m AISA AI assistant."), 300);
 })();
+
