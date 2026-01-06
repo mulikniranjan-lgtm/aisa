@@ -77,21 +77,35 @@ function add(text, user = false) {
 }
 
 
-  async function askAI(text) {
-    add(text, true);
+async function sendMessage() {
+  const text = input.value.trim(); // ✅ capture first
 
-    try {
-      const res = await fetch("https://aisa-4.onrender.com/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text })
-      });
-      const data = await res.json();
-      add(data.reply);
-    } catch {
-      add("AI server not reachable.");
-    }
+  if (!text) {
+    add("⚠️ Please type a message.", false);
+    return;
   }
+
+  // ✅ show user message FIRST
+  add(text, true);
+
+  // ✅ clear input AFTER displaying
+  input.value = "";
+
+  try {
+    const res = await fetch("https://aisa-4.onrender.com/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text })
+    });
+
+    const data = await res.json();
+    add(data.reply || "No reply from AI.", false);
+
+  } catch (err) {
+    add("❌ AI server not reachable.", false);
+  }
+}
+
 
   launcher.onclick = () => box.style.display = box.style.display === "block" ? "none" : "block";
   box.querySelector("#closeBot").onclick = () => box.style.display = "none";
@@ -100,6 +114,7 @@ function add(text, user = false) {
 
   setTimeout(() => add("Hi 👋 I’m AISA AI assistant."), 300);
 })();
+
 
 
 
