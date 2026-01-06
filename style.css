@@ -696,3 +696,30 @@ footer {
     padding: 2.5rem 0;
   }
 }
+/* ============================= */
+/* AISA Chatbot – FORCE FIX */
+/* ============================= */
+
+#chatbot-input,
+#input {
+  pointer-events: auto !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+
+  background: #000000 !important;
+  color: #ffffff !important;
+  caret-color: #22d3ee !important;
+
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  outline: none !important;
+  z-index: 100000 !important;
+  position: relative !important;
+}
+
+/* Ensure chatbot container is clickable */
+#chatbot-container,
+#chatBox {
+  pointer-events: auto !important;
+  z-index: 100000 !important;
+}
+
