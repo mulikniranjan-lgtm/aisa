@@ -1,4 +1,5 @@
 (function () {
+  // ===== Launcher =====
   const launcher = document.createElement("button");
   launcher.textContent = "💬";
   Object.assign(launcher.style, {
@@ -16,6 +17,7 @@
   });
   document.body.appendChild(launcher);
 
+  // ===== Chat Box =====
   const box = document.createElement("div");
   Object.assign(box.style, {
     position: "fixed",
@@ -23,7 +25,7 @@
     right: "18px",
     width: "360px",
     background: "#0b1220",
-    color: "#fff",
+    color: "#ffffff",
     borderRadius: "12px",
     display: "none",
     padding: "10px",
@@ -31,91 +33,125 @@
   });
 
   box.innerHTML = `
-    <div style="display:flex;justify-content:space-between">
+    <div style="display:flex;justify-content:space-between;align-items:center">
       <strong>AISA Bot</strong>
-      <button id="closeBot">✕</button>
+      <button id="closeBot" style="background:none;border:none;color:white;font-size:1.2rem;cursor:pointer">✕</button>
     </div>
-    <div id="msgs" style="height:220px;overflow:auto;margin:8px 0"></div>
+
+    <div id="msgs" style="height:220px;overflow:auto;margin:8px 0;padding-right:4px"></div>
+
     <div style="display:flex;gap:6px">
-      <input id="input" placeholder="Ask about AISA..." style="flex:1">
-      <button id="send">Send</button>
+      <input
+        id="input"
+        type="text"
+        placeholder="Ask about AISA..."
+        style="
+          flex:1;
+          padding:8px;
+          border-radius:6px;
+          border:1px solid rgba(255,255,255,0.2);
+          background:#000000;
+          color:#ffffff;
+          outline:none;
+        "
+      />
+      <button
+        id="send"
+        style="
+          padding:8px 12px;
+          border-radius:6px;
+          border:none;
+          background:#22d3ee;
+          color:#02121a;
+          cursor:pointer;
+          font-weight:600;
+        "
+      >
+        Send
+      </button>
     </div>
   `;
   document.body.appendChild(box);
 
   const msgs = box.querySelector("#msgs");
   const input = box.querySelector("#input");
-function add(text, user = false) {
-  const d = document.createElement("div");
+  const sendBtn = box.querySelector("#send");
+  const closeBtn = box.querySelector("#closeBot");
 
-  // COMMON STYLES
-  d.style.display = "block";
-  d.style.margin = "10px 0";
-  d.style.padding = "10px 12px";
-  d.style.borderRadius = "12px";
-  d.style.maxWidth = "80%";
-  d.style.wordWrap = "break-word";
-  d.style.fontSize = "0.95rem";
-  d.style.lineHeight = "1.4";
+  // ===== Add Message =====
+  function add(text, user = false) {
+    const d = document.createElement("div");
 
-  if (user) {
-    // USER MESSAGE (RIGHT SIDE)
-    d.style.marginLeft = "auto";
-    d.style.background = "#2563eb";   // strong blue
-    d.style.color = "#0f172a";        // white text
-    d.style.textAlign = "left";
-  } else {
-    // BOT MESSAGE (LEFT SIDE)
-    d.style.marginRight = "auto";
-    d.style.background = "#22d3ee";   // cyan
-    d.style.color = "#02121a";        // dark readable
+    d.style.display = "block";
+    d.style.margin = "10px 0";
+    d.style.padding = "10px 12px";
+    d.style.borderRadius = "12px";
+    d.style.maxWidth = "80%";
+    d.style.wordBreak = "break-word";
+    d.style.fontSize = "0.95rem";
+    d.style.lineHeight = "1.4";
+
+    if (user) {
+      d.style.marginLeft = "auto";
+      d.style.background = "#2563eb"; // blue
+      d.style.color = "#ffffff";      // WHITE text ✅
+    } else {
+      d.style.marginRight = "auto";
+      d.style.background = "#22d3ee"; // cyan
+      d.style.color = "#02121a";      // dark text
+    }
+
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
   }
 
-  d.textContent = text;
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-}
+  // ===== Send Message (FIXED LOGIC) =====
+  async function sendMessage() {
+    const text = input.value.trim();
 
+    if (!text) return;
 
-async function sendMessage() {
-  const text = input.value.trim(); // ✅ capture first
+    // show user message
+    add(text, true);
 
-  if (!text) {
-    add("⚠️ Please type a message.", false);
-    return;
+    // clear input AFTER showing
+    input.value = "";
+    input.focus();
+
+    try {
+      const res = await fetch("https://aisa-4.onrender.com/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+
+      const data = await res.json();
+      add(data.reply || "No reply from AI.", false);
+
+    } catch (err) {
+      add("❌ AI server not reachable.", false);
+    }
   }
 
-  // ✅ show user message FIRST
-  add(text, true);
+  // ===== Events =====
+  launcher.onclick = () => {
+    box.style.display = box.style.display === "block" ? "none" : "block";
+    setTimeout(() => input.focus(), 100);
+  };
 
-  // ✅ clear input AFTER displaying
-  input.value = "";
+  closeBtn.onclick = () => box.style.display = "none";
+  sendBtn.onclick = sendMessage;
 
-  try {
-    const res = await fetch("https://aisa-4.onrender.com/ask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: text })
-    });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
 
-    const data = await res.json();
-    add(data.reply || "No reply from AI.", false);
-
-  } catch (err) {
-    add("❌ AI server not reachable.", false);
-  }
-}
-
-
-  launcher.onclick = () => box.style.display = box.style.display === "block" ? "none" : "block";
-  box.querySelector("#closeBot").onclick = () => box.style.display = "none";
-  box.querySelector("#send").onclick = () => askAI(input.value);
-  input.onkeydown = e => e.key === "Enter" && askAI(input.value);
-
-  setTimeout(() => add("Hi 👋 I’m AISA AI assistant."), 300);
+  // ===== Greeting =====
+  setTimeout(() => {
+    add("Hi 👋 I’m AISA AI assistant. How can I help you?", false);
+  }, 300);
 })();
-
-
-
-
-
