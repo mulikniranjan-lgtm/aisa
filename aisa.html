@@ -137,6 +137,31 @@
     }
   });
 </script>
+  <!-- ===== AISA Chatbot Button ===== -->
+<div id="chatbot-toggle">💬</div>
+
+<!-- ===== AISA Chatbot Window ===== -->
+<div id="chatbot-container">
+  <div id="chatbot-header">
+    <span>AISA Assistant</span>
+    <button id="chatbot-close">✕</button>
+  </div>
+
+  <div id="chatbot-messages"></div>
+
+  <div id="chatbot-input-area">
+    <input
+      type="text"
+      id="chatbot-input"
+      placeholder="Ask me about AISA, events, academics..."
+    />
+    <button id="chatbot-send">Send</button>
+  </div>
+</div>
+
+<!-- Chatbot Script -->
+<script src="bot.js"></script>
+
 
 </body>
 </html>
