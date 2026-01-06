@@ -62,7 +62,7 @@ function add(text, user = false) {
     // USER MESSAGE (RIGHT SIDE)
     d.style.marginLeft = "auto";
     d.style.background = "#2563eb";   // strong blue
-    d.style.color = "#ffffff";        // white text
+    d.style.color = "#0f172a";        // white text
     d.style.textAlign = "left";
   } else {
     // BOT MESSAGE (LEFT SIDE)
@@ -114,6 +114,7 @@ async function sendMessage() {
 
   setTimeout(() => add("Hi 👋 I’m AISA AI assistant."), 300);
 })();
+
 
 
 
